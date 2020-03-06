@@ -9,4 +9,6 @@ class User < ApplicationRecord
   # validates :password, length: { minimum: 8, maximum: 32 }
   PW_REDEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i
   validates :password, presence: true, format: { with: PW_REDEX }
+  
+  has_many :topics
 end

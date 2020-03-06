@@ -14,13 +14,13 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    log_out(user_params)
+    log_out
     redirect_to root_url, info: 'ログアウトしました'
   end
 
   private
   def user_params
-     params.require(:user_id, :password)
+    params.require(:user_id)
   end
   
   def log_in(user)
